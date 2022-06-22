@@ -1,0 +1,15 @@
+<%= form_for @post do |form| %>
+  <div class="form-control">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="form-control">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="form-control">
+    <%= form.submit 'Save' %>
+  </div>
+<% end %>
