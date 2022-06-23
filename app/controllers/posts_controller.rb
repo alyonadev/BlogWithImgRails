@@ -14,7 +14,9 @@ class PostsController < ApplicationController
   def edit; end
 
   def create
-    if @post.save!
+    @post = Post.new(post_params)
+
+    if @post.save
       redirect_to @post
     else
       render :new
