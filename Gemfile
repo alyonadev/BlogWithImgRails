@@ -12,6 +12,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'bootstrap', '~> 5.1.3'
 gem 'jquery-rails'
+gem 'carrierwave', '~> 2.0'
+gem "mini_magick"
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
