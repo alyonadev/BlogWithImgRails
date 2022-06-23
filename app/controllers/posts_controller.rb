@@ -17,23 +17,23 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to @post
+      redirect_to @post, success: 'Post successfully added'
     else
-      render :new
+      render :new, danger: 'Post not added'
     end
   end
 
   def update
     if @post.update_attributes(post_params)
-      redirect_to @post
+      redirect_to @post, success: 'Post successfully updated'
     else
-      render :edit
+      render :edit, danger: 'Post not updated'
     end
   end
 
   def destroy
     @post.destroy
-    redirect_to posts_path
+    redirect_to posts_path, success: 'Post successfully removed'
   end
 
   private
