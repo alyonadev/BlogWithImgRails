@@ -1,6 +1,7 @@
+# frozen_string_literal: true
 Rails.application.routes.draw do
   root 'posts#index'
 
   resources :posts
-  resources :pictures, only: [:create, :destroy]
+  resources :pictures, only: %i[create destroy]
 end
