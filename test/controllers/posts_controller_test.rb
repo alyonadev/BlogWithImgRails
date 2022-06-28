@@ -13,24 +13,20 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test 'should get index' do
     get posts_url
     assert_response :success
-    assert_not_nil assigns(:posts)
   end
 
   test 'should get show' do
     get post_url(@post)
     assert_response :success
-    assert_not_nil assigns(:post)
   end
 
   test 'should get new' do
     get new_post_url(@post)
     assert_response :success
-    assert_not_nil assigns(:post)
   end
 
   test 'should get edit' do
     get edit_post_url(@post)
     assert_response :success
-    assert_not_nil assigns(:post)
   end
 end
