@@ -12,21 +12,6 @@ class PostTest < ActiveSupport::TestCase
     )
   end
 
-  test 'should get index' do
-    get :index
-    assert_response :success
-  end
-
-  test 'should get new' do
-    get 'posts#new'
-    assert_response :success
-  end
-
-  test 'should show post' do
-    visit post_path(@post)
-    assert_response :success
-  end
-
   test 'post should be valid' do
     assert @post.valid?
   end
