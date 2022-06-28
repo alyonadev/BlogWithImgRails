@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
@@ -28,5 +29,19 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test 'should get edit' do
     get edit_post_url(@post)
     assert_response :success
+  end
+
+  test 'should create post' do
+    assert_difference('Post.count') do
+      post posts_url, params: {
+        post: {
+          title: 'Hello',
+          summary: 'create test',
+          content: 'test for create'
+        }
+      }
+    end
+
+    assert_redirected_to post_path(Post.last)
   end
 end
