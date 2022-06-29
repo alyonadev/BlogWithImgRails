@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  before do
+  before :all do
     @post = Post.create!(
       title: 'New Post',
       summary: 'Post summary',

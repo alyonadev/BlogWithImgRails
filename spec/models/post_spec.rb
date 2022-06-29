@@ -31,4 +31,33 @@ RSpec.describe Post, type: :model do
       expect(post).to_not be_valid
     end
   end
+
+  describe 'CRUD' do
+    before :all do
+      @post = Post.create!(
+        title: 'New Post',
+        summary: 'Post summary',
+        content: 'some text',
+        image: ''
+      )
+    end
+
+    it 'create post' do
+      expect(@post).to be_valid
+    end
+
+    it 'read post' do
+      expect(Post.find_by_title('New Post')).to eq(@post)
+    end
+
+    it 'update post' do
+      @post.update(title: 'New Post - after update')
+      expect(Post.find_by_title('New Post - after update')).to eq(@post)
+    end
+
+    it 'destroy post' do
+      @post.delete
+      expect(Post.find_by(title: 'New Post - after update')).to be_nil
+    end
+  end
 end
