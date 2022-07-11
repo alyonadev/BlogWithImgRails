@@ -35,7 +35,8 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to posts_path, success: 'Post successfully removed'
+    redirect_to posts_path, success:
+        'Post successfully removed'
   end
 
   private
