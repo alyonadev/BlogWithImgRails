@@ -11,5 +11,6 @@ module BlogWithImgRails
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+    config.assets.initialize_on_precompile = false
   end
 end
